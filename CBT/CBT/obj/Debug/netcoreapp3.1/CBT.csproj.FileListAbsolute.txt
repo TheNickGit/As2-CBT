@@ -1,0 +1,14 @@
+C:\Users\nvrie\OneDrive\Documenten\Visual Studio 2019\as2-cbt\CBT\CBT\bin\Debug\netcoreapp3.1\CBT.exe
+C:\Users\nvrie\OneDrive\Documenten\Visual Studio 2019\as2-cbt\CBT\CBT\bin\Debug\netcoreapp3.1\CBT.deps.json
+C:\Users\nvrie\OneDrive\Documenten\Visual Studio 2019\as2-cbt\CBT\CBT\bin\Debug\netcoreapp3.1\CBT.runtimeconfig.json
+C:\Users\nvrie\OneDrive\Documenten\Visual Studio 2019\as2-cbt\CBT\CBT\bin\Debug\netcoreapp3.1\CBT.runtimeconfig.dev.json
+C:\Users\nvrie\OneDrive\Documenten\Visual Studio 2019\as2-cbt\CBT\CBT\bin\Debug\netcoreapp3.1\CBT.dll
+C:\Users\nvrie\OneDrive\Documenten\Visual Studio 2019\as2-cbt\CBT\CBT\bin\Debug\netcoreapp3.1\CBT.pdb
+C:\Users\nvrie\OneDrive\Documenten\Visual Studio 2019\as2-cbt\CBT\CBT\obj\Debug\netcoreapp3.1\CBT.csproj.AssemblyReference.cache
+C:\Users\nvrie\OneDrive\Documenten\Visual Studio 2019\as2-cbt\CBT\CBT\obj\Debug\netcoreapp3.1\CBT.AssemblyInfoInputs.cache
+C:\Users\nvrie\OneDrive\Documenten\Visual Studio 2019\as2-cbt\CBT\CBT\obj\Debug\netcoreapp3.1\CBT.AssemblyInfo.cs
+C:\Users\nvrie\OneDrive\Documenten\Visual Studio 2019\as2-cbt\CBT\CBT\obj\Debug\netcoreapp3.1\CBT.csproj.CoreCompileInputs.cache
+C:\Users\nvrie\OneDrive\Documenten\Visual Studio 2019\as2-cbt\CBT\CBT\obj\Debug\netcoreapp3.1\CBT.dll
+C:\Users\nvrie\OneDrive\Documenten\Visual Studio 2019\as2-cbt\CBT\CBT\obj\Debug\netcoreapp3.1\CBT.pdb
+C:\Users\nvrie\OneDrive\Documenten\Visual Studio 2019\as2-cbt\CBT\CBT\obj\Debug\netcoreapp3.1\CBT.genruntimeconfig.cache
+C:\Users\nvrie\OneDrive\Documenten\Visual Studio 2019\as2-cbt\CBT\CBT\bin\Debug\netcoreapp3.1\Suduko_puzzels_5.txt
