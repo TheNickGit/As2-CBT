@@ -78,8 +78,10 @@ class Puzzel
         }
     }
 
-
-    public void Iteratie()
+    /// <summary>
+    /// Een loop van het chronologische backtracking algoritme.
+    /// </summary>
+    public void ChronologicalBackTracking()
     {
         // Er is een oplossing gevonden als het laatste vakje bereikt wordt en deze een domeingrootte van 1 heeft.
         if (indexCounter == 80 && vakjes[8, 8].domein.Count == 1)
@@ -99,7 +101,7 @@ class Puzzel
             rijIndex = indexCounter / 9;
             kolomIndex = indexCounter % 9;
         }
-        // TODO, deze 2 regels verwijderen zorgt voor een crash.
+        // Er is ook een oplossing gevonden als het laatste vakje is bereikt en deze al ingevuld is.
         if (indexCounter >= 81)
         {
             Console.WriteLine("Oplossing gevonden!");
@@ -107,7 +109,6 @@ class Puzzel
             return;
         }
             
-
         // Voor dit lege vakje, ga het hele domein langs vanaf het begin.
         foreach (int waarde in vakjes[rijIndex, kolomIndex].domein)
         {
@@ -120,7 +121,7 @@ class Puzzel
             if(forwardPuzzel.CheckDomeinen(rijIndex, kolomIndex))
             {
                 forwardPuzzel.indexCounter++;
-                forwardPuzzel.Iteratie();
+                forwardPuzzel.ChronologicalBackTracking();
             }
         }
     }
@@ -215,6 +216,10 @@ class Puzzel
         return true;
     }
 
+    /// <summary>
+    /// Maak een kopie van de vakjes array zodat het algoritme
+    /// geen data aanpast die momenteel gebruikt wordt.
+    /// </summary>
     private Vakje[,] KopieerVakjes()
     {
         Vakje[,] vakjesKopie = new Vakje[9, 9];

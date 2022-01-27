@@ -27,19 +27,5 @@ class Vakje
 
         return new Vakje(waarde, domeinKopie);
     }
-
-    public void VerwijderUitDomein(int waarde)
-    {
-        domein.Remove(waarde);
-    }
-
-    public string PrintDomein()
-    {
-        string s = "{ ";
-        foreach (int x in domein)
-            s+= x + ", ";
-        s += "}";
-        return s;
-    }
 }
 

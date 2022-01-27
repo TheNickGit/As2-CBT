@@ -24,19 +24,13 @@ class Program
 
             // De loop van het algoritme.
             Console.WriteLine("Het algoritme is bezig...\n");
-
             p.MaakKnoopConsistent();
-            p.Iteratie();
-            Console.WriteLine("\n\nEen nieuwe sudoku kan nu ingeladen worden.");
+            p.ChronologicalBackTracking();
 
             // Voer het programma opnieuw uit.
+            Console.WriteLine("\n\nEen nieuwe sudoku kan nu ingeladen worden.");
             SudokuProgramma();
         }
-    }
-
-    public void ChronologicalBacktracking()
-    {
-
     }
 
     /// <summary>
