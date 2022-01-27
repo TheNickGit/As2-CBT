@@ -6,11 +6,12 @@ class Program
     static void Main()
     {
         // Geeft groep informatie weer.
-        Console.WriteLine("Welkom bij de implementatie van Iterated Local Search van groep 47.");
+        Console.WriteLine("Welkom bij de implementatie van Chronological Backtracking van groep 47.");
 
         // Voer het programma uit dat de gebruiker in staat stelt een van de puzzels in te laden
-        // en deze te laten oplossen met het ingebouwde ILS algoritme.
+        // en deze te laten oplossen met het ingebouwde CBT algoritme.
         SudokuProgramma();
+
         void SudokuProgramma()
         {
             // Vraag de gebruiker welke puzzel ingeladen dient te worden,
