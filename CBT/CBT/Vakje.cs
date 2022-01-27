@@ -7,16 +7,39 @@ using System.Text;
 class Vakje
 {
     public int waarde;
-    public int[] domein;
+    public List<int> domein;
 
-    public Vakje(int waarde = 0, int[] domein = null)
+    public Vakje(int waarde = 0, List<int> domein = null)
     {
         this.waarde = waarde;
 
         if (domein == null)
-            this.domein = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+            this.domein = new List<int>();
         else
             this.domein = domein;
+    }
+
+    public Vakje KopieerVakje()
+    {
+        List<int> domeinKopie = new List<int>();
+        foreach (int i in domein)
+            domeinKopie.Add(i);
+
+        return new Vakje(waarde, domeinKopie);
+    }
+
+    public void VerwijderUitDomein(int waarde)
+    {
+        domein.Remove(waarde);
+    }
+
+    public string PrintDomein()
+    {
+        string s = "{ ";
+        foreach (int x in domein)
+            s+= x + ", ";
+        s += "}";
+        return s;
     }
 }
 

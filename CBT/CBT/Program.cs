@@ -24,16 +24,19 @@ class Program
 
             // De loop van het algoritme.
             Console.WriteLine("Het algoritme is bezig...\n");
-            // ...
 
-            // Oplossing gevonden! Geef alle informatie weer op het scherm.
-            Console.WriteLine("Gevonden oplossing!");
-            p.PrintPuzzel();
+            p.MaakKnoopConsistent();
+            p.Iteratie();
             Console.WriteLine("\n\nEen nieuwe sudoku kan nu ingeladen worden.");
 
             // Voer het programma opnieuw uit.
             SudokuProgramma();
         }
+    }
+
+    public void ChronologicalBacktracking()
+    {
+
     }
 
     /// <summary>
