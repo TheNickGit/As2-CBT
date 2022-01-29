@@ -4,8 +4,10 @@ using System.IO;
 
 class Puzzel
 {
-    // De puzzel wordt bepaald door een 3D array van 9 bij 9
+    // De puzzel wordt bepaald door een 3D array van 9 bij 9.
     public Vakje[,] vakjes;
+
+    // Deze variabel geeft de index weer van het huidige vakje (van 0 t/m 80).
     public int indexCounter = 0;
 
     /// <summary>
@@ -83,10 +85,15 @@ class Puzzel
     /// </summary>
     public void ChronologicalBackTracking()
     {
+        // Als er al een oplossing gevonden is, return meteen
+        if (Program.oplossingGevonden)
+            return;
+
         // Er is een oplossing gevonden als het laatste vakje bereikt wordt en deze een domeingrootte van 1 heeft.
         if (indexCounter == 80 && vakjes[8, 8].domein.Count == 1)
         {
             vakjes[8, 8].waarde = vakjes[8, 8].domein[0];
+            Program.oplossingGevonden = true;
             Console.WriteLine("Oplossing gevonden!");
             PrintPuzzel();
             return;
@@ -101,15 +108,17 @@ class Puzzel
             rijIndex = indexCounter / 9;
             kolomIndex = indexCounter % 9;
         }
-        // Er is ook een oplossing gevonden als het laatste vakje is bereikt en deze al ingevuld is.
+
+        // Als het laatste vakje bereikt wordt en deze al ingevuld is (waardoor indexCounter 81 bereikt wordt), is ook een oplossing gevonden.
         if (indexCounter >= 81)
         {
+            Program.oplossingGevonden = true;
             Console.WriteLine("Oplossing gevonden!");
             PrintPuzzel();
             return;
         }
             
-        // Voor dit lege vakje, ga het hele domein langs vanaf het begin.
+        // Voor het lege vakje dat hoort bij de verkregen indexen, ga het hele domein langs vanaf het begin.
         foreach (int waarde in vakjes[rijIndex, kolomIndex].domein)
         {
             Vakje[,] vakjesKopie = KopieerVakjes();
@@ -118,6 +127,7 @@ class Puzzel
             forwardPuzzel.UpdateDomeinen(rijIndex, kolomIndex);
 
             // Pas forward checking toe.
+            // Als de huidige toestand een partiële toestand is, ga verder met de nieuwe puzzel.
             if(forwardPuzzel.CheckDomeinen(rijIndex, kolomIndex))
             {
                 forwardPuzzel.indexCounter++;

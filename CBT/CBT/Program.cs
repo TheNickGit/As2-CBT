@@ -3,6 +3,9 @@ using System.Collections.Generic;
 
 class Program
 {
+    // Deze bool zorgt dat het algoritme stopt zodra een eerste oplossing is gevonden.
+    public static bool oplossingGevonden;
+
     static void Main()
     {
         // Geeft groep informatie weer.
@@ -15,16 +18,16 @@ class Program
         void SudokuProgramma()
         {
             // Vraag de gebruiker welke puzzel ingeladen dient te worden,
-            // Maak deze puzzel aan en print hem in de console.
+            // maak deze puzzel aan en print hem in de console.
+            oplossingGevonden = false;
             Puzzel p = new Puzzel();
             int puzzelID = VraagPuzzelID();
             p.LaadSudoku(puzzelID);
             Console.WriteLine("Initiële puzzel:");
             p.PrintPuzzel();
-            Console.WriteLine();
 
             // De loop van het algoritme.
-            Console.WriteLine("Het algoritme is bezig...\n");
+            Console.WriteLine("\nHet algoritme is bezig...\n");
             p.MaakKnoopConsistent();
             p.ChronologicalBackTracking();
 
@@ -45,7 +48,9 @@ class Program
         try
         {
             int puzzelID = int.Parse(input);
-            if (puzzelID >= 1 && puzzelID <= 5)
+            if (puzzelID >= 1
+                && puzzelID <= 5 // Comment deze regel eruit om meer dan 5 sudokupuzzels in te kunnen laden.
+                )
                 return puzzelID;
             else
             {
